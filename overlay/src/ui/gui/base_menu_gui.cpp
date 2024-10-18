@@ -74,7 +74,7 @@ void BaseMenuGui::preDraw(tsl::gfx::Renderer* renderer)
             SysClkModule m;
             std::uint32_t x;
         } freqOffsets[SysClkModule_EnumMax] = {
-            { SysClkModule_CPU, 61 },
+            { SysClkModule_CPU, 63 },
             { SysClkModule_GPU, 204 },
             { SysClkModule_MEM, 342 },
         };
@@ -87,8 +87,8 @@ void BaseMenuGui::preDraw(tsl::gfx::Renderer* renderer)
             renderer->drawString(buf, false, freqOffsets[i].x, y, SMALL_TEXT_SIZE, VALUE_COLOR);
         }
         renderer->drawString("CPUBaseMenuGuiText"_tr.c_str(), false, 20, y, SMALL_TEXT_SIZE, DESC_COLOR);
-        renderer->drawString("GPUBaseMenuGuiText"_tr.c_str(), false, 162, y, SMALL_TEXT_SIZE, DESC_COLOR);
-        renderer->drawString("MemBaseMenuGuiText"_tr.c_str(), false, 295, y, SMALL_TEXT_SIZE, DESC_COLOR);
+        renderer->drawString("GPUBaseMenuGuiText"_tr.c_str(), false, 160, y, SMALL_TEXT_SIZE, DESC_COLOR);
+        renderer->drawString("MemBaseMenuGuiText"_tr.c_str(), false, 293, y, SMALL_TEXT_SIZE, DESC_COLOR);
 
         y += 25;
 
@@ -106,14 +106,14 @@ void BaseMenuGui::preDraw(tsl::gfx::Renderer* renderer)
             SysClkThermalSensor s;
             std::uint32_t x;
         } tempOffsets[SysClkModule_EnumMax] = {
-            { SysClkThermalSensor_SOC, 61 },
+            { SysClkThermalSensor_SOC, 63 },
             { SysClkThermalSensor_PCB, 204 },
             { SysClkThermalSensor_Skin, 342 },
         };
 
         renderer->drawString("ChipBaseMenuGuiText"_tr.c_str(), false, 20, y, SMALL_TEXT_SIZE, DESC_COLOR);
-        renderer->drawString("PCBBaseMenuGuiText"_tr.c_str(), false, 166, y, SMALL_TEXT_SIZE, DESC_COLOR);
-        renderer->drawString("SkinBaseMenuGuiText"_tr.c_str(), false, 303, y, SMALL_TEXT_SIZE, DESC_COLOR);
+        renderer->drawString("PCBBaseMenuGuiText"_tr.c_str(), false, 160, y, SMALL_TEXT_SIZE, DESC_COLOR);
+        renderer->drawString("SkinBaseMenuGuiText"_tr.c_str(), false, 293, y, SMALL_TEXT_SIZE, DESC_COLOR);
 
         for(unsigned int i = 0; i < SysClkModule_EnumMax; i++)
         {
@@ -137,7 +137,7 @@ void BaseMenuGui::preDraw(tsl::gfx::Renderer* renderer)
         renderer->drawString("BatteryPowerBaseMenuGuiText"_tr.c_str(), false, 20, y, SMALL_TEXT_SIZE, DESC_COLOR);
 
         renderer->drawString("BatteryPowerNowBaseMenuGuiText"_tr.c_str(), false, 160, y, SMALL_TEXT_SIZE, DESC_COLOR);
-        renderer->drawString("BatteryPowerAvgBaseMenuGuiText"_tr.c_str(), false, 304, y, SMALL_TEXT_SIZE, DESC_COLOR);
+        renderer->drawString("BatteryPowerAvgBaseMenuGuiText"_tr.c_str(), false, 293, y, SMALL_TEXT_SIZE, DESC_COLOR);
         for(unsigned int i = 0; i < SysClkPowerSensor_EnumMax; i++)
         {
             std::uint32_t mw = this->context->power[powerOffsets[i].s];
